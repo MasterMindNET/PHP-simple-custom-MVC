@@ -17,3 +17,18 @@ function __autoload($file){
 }
 
 //http://mvc.solo/index.php?option=view //option=controllerNAME
+
+if(isset($_GET['option'])){
+    $class = strip_tags(ucfirst($_GET['option']));
+    $init = null;
+
+    switch($class){
+        case 'View':
+            $init = new $class;
+            break;
+        default:
+            $init = new Index;
+    }
+}else{
+    $init = new Index;
+}
