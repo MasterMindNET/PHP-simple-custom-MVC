@@ -28,6 +28,7 @@ if(isset($_GET['option'])){
             break;
         default:
             $init = new Index;
+        break;
     }
 }else{
     $init = new Index;
