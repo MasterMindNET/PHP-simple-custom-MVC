@@ -13,7 +13,7 @@ class Model
     public function __construct($host, $user, $pass, $db)
     {
         $this->db = mysqli_connect($host, $user, $pass, $db);
-        if($this->db){
+        if(!$this->db){
             exit("No connection with DB");
         }
         if(!mysqli_select_db($this->db, $db)){
@@ -43,7 +43,7 @@ class Model
     }
 
     public function getSinglePost($id){
-        $sql = "SELECT * FROM post WHERE id={(int)$id} LIMIT 1";
+        $sql = "SELECT * FROM post WHERE id={$id} LIMIT 1";
         $res = mysqli_query($this->db, $sql);
         if(!$res){
             return false;

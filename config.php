@@ -8,5 +8,5 @@
 
 define('HOST', 'localhost');
 define('USER', 'root');
-define('PASSWORD', '');
+define('PASS', '');
 define('DB', 'mvc_php');

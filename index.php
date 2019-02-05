@@ -5,6 +5,7 @@
  * Date: 2/5/2019
  * Time: 12:41 PM
  */
+// ENTRY POINT: selects the controller which should be loaded and then calls the getBody func.
 require_once "config.php";
 header("Content-Type:text/html;charset='utf-8'");
 
@@ -33,3 +34,6 @@ if(isset($_GET['option'])){
 }else{
     $init = new Index;
 }
+
+
+echo $init->getBody();
